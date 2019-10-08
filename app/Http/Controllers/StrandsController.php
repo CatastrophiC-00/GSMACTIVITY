@@ -33,4 +33,14 @@ class StrandsController extends Controller
 
         return redirect('/home/strands');
     }
+     public function edit(Strand $strand)
+    {
+        return view('strands.edit')->with('strand', $strand);
+    }
+    public function update(Strand $strand)
+    {
+        $strand->name = request()->name;
+        $strand->save();
+        return redirect('/home/strands');
+    }
 }

@@ -7,6 +7,7 @@
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Subject Name</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -14,11 +15,11 @@
 					<tr>
 						<td>{{ $subject->id }}</td>
 						<td>{{ $subject->name }}</td>
+						<td><a href="/home/subjects/{{$subject->id}}/edit">Edit</a></td>
 					</tr>
 				@endforeach
 			</tbody>
 		</table>
 		<a class="btn btn-primary" href='/home/subjects/add'>Add New Subject</a>
-		<a class="btn btn-primary" href='/home/subjects/update'>Update</a>
 	</div>
 @endsection

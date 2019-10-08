@@ -34,4 +34,14 @@ class EnrolController extends Controller
 
         return redirect('/home/subjects');
     }
+    public function edit(Subject $subject)
+    {
+        return view('subjects.edit')->with('subject', $subject);
+    }
+    public function update(Subject $subject)
+    {
+        $subject->name = request()->name;
+        $subject->save();
+        return redirect('/home/subjects');
+    }
 }

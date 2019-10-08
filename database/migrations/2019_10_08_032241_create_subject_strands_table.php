@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubjectstrandsTable extends Migration
+class CreateSubjectStrandsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateSubjectstrandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('subjectstrands', function (Blueprint $table) {
+        Schema::create('subject_strands', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('semester');
+            $table->integer('semester');
             $table->integer('grade_level');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateSubjectstrandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subjectstrands');
+        Schema::dropIfExists('subject_strands');
     }
 }

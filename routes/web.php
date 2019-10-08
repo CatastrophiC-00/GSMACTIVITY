@@ -23,9 +23,16 @@ Route::middleware('auth')->group(function() {
 	Route::get('/home/sections', 'SectionsController@section');
 	Route::get('/home/teachers', 'TeachersController@teacher');
 	Route::get('/home/strands', 'StrandsController@strand');
+	Route::get('/home/subjectstrands', 'SubjectStrandsController@subjectstrand');
 	Route::get('/home/subjects/add', 'EnrolController@create');
 	Route::get('/home/sections/add', 'SectionsController@create');
 	Route::get('/home/teachers/add', 'TeachersController@create');
+	Route::get('/home/sections/{section}/edit', 'SectionsController@edit');
+	Route::post('/home/sections/{section}/update', 'SectionsController@update');
+	Route::get('/home/strands/{strand}/edit', 'StrandsController@edit');
+	Route::post('/home/strands/{strand}/update', 'StrandsController@update');
+	Route::get('/home/subjects/{subject}/edit', 'EnrolController@edit');
+	Route::post('/home/subjects/{subject}/update', 'EnrolController@update');
 	Route::get('/home/teachers/{teacher}/edit', 'TeachersController@edit');
 	Route::post('/home/teachers/{teacher}/update', 'TeachersController@update');
 	Route::get('/home/strands/add', 'StrandsController@create');

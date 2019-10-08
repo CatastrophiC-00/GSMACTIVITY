@@ -33,4 +33,15 @@ class SectionsController extends Controller
 
         return redirect('/home/sections');
     }
+     public function edit(Section $section)
+    {
+        return view('sections.edit')->with('section', $section);
+    }
+    public function update(Section $section)
+    {
+        $section->name = request()->name;
+        $section->is_active = request()->is_active;
+        $section->save();
+        return redirect('/home/sections');
+    }
 }
